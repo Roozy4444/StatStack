@@ -7,7 +7,7 @@
  */
 exports.up = async (knex) => {
     return knex.schema.createTable('users', (table) => {
-      table.bigIncrements('id');
+      table.bigIncrements('id').primary()
       table.string('firstName').notNullable
       table.string('lastName').notNullable
       table.string('email').notNullable().unique();
