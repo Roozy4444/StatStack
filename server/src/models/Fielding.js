@@ -8,13 +8,13 @@ class Fielding extends Model {
   static get jsonSchema() {
     return {
       type: 'object', 
-      required: ['putouts', 'assisits', 'errors', 'doublePlays', 'userId'],
+      required: ['putOuts', 'assists', 'errors', 'doublePlays', 'userId'],
       properties: {
-        putouts: { type: ['integer', 'string'] },
+        putOuts: { type: ['integer', 'string'] },
         assists: { type: ['integer', 'string'] },
         errors: { type: ['integer', 'string'] },
         doublePlays: { type: ['integer', 'string'] },
-        userId: { type: ['bigInteger', 'string'] }
+        userId: { type: ['integer', 'string'] }
       }
     }
   }

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import config from "../../config";
 import FormError from "../layout/FormError";
+import translateServerErrors from '../../services/translateServerErrors.js'
 
 const SignInForm = () => {
   const [userPayload, setUserPayload] = useState({ email: "", password: "" });
@@ -44,12 +45,17 @@ const SignInForm = () => {
           resp.json().then(() => {
             setShouldRedirect(true);
           });
+        } else if (response.status === 422) {
+          const body = response.json()
+          const newErrors = translateServerErrors(body.errors)
+          return setErrors(newErrors)
         } else {
           const errorMessage = `${resp.status} (${resp.statusText})`;
           const error = new Error(errorMessage);
           throw error;
-        }
-      });
+        }    
+      })
+      .catch((err) => `Error in fetch: ${err.message}`)
     }
   };
   const onInputChange = (event) => {
@@ -64,13 +70,19 @@ const SignInForm = () => {
   }
 
   return (
-    <div className="grid-container" onSubmit={onSubmit}>
-      <h1>Sign In</h1>
-      <form>
+    <div className="grid-container background-runner" onSubmit={onSubmit}>
+      <form className='main-container form-container'>
+        <h1>Sign In</h1>
         <div>
           <label>
             Email
-            <input type="text" name="email" value={userPayload.email} onChange={onInputChange} />
+            <input 
+              className='input' 
+              type="text" 
+              name="email" 
+              value={userPayload.email} 
+              onChange={onInputChange} 
+            />
             <FormError error={errors.email} />
           </label>
         </div>
@@ -78,6 +90,7 @@ const SignInForm = () => {
           <label>
             Password
             <input
+              className='input'
               type="password"
               name="password"
               value={userPayload.password}
@@ -86,8 +99,8 @@ const SignInForm = () => {
             <FormError error={errors.password} />
           </label>
         </div>
-        <div>
-          <input type="submit" className="button" value="Sign In" />
+        <div className='btn-div'>
+          <input type="submit" className='btn btn-primary' value="Sign In" />
         </div>
       </form>
     </div>

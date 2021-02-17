@@ -36,25 +36,33 @@ class User extends uniqueFunc(Model) {
     };
   }
   static get relationMappings() {
-    const { Review, Recipe } = require('./index.js')
+    const { Batting, Fielding, Pitching } = require('./index.js')
 
     return {
-      reviews: {
+      batting: {
         relation: Model.HasManyRelation,
-        modelClass: Review,
+        modelClass: Batting, 
         join: {
           from: 'users.id',
-          to: 'reviews.userId'
+          to: 'batting.userId'
         }
-      },
-      recipe: {
+      }, 
+      fielding: {
         relation: Model.HasManyRelation,
-        modelClass: Recipe,
+        modelClass: Fielding, 
         join: {
           from: 'users.id',
-          to: 'recipes.userId'
+          to: 'fielding.userId'
         }
-      } 
+      }, 
+      pitching: {
+        relation: Model.HasManyRelation,
+        modelClass: Pitching, 
+        join: {
+          from: 'users.id',
+          to: 'pitching.userId'
+        }
+      }   
     }
   }
 

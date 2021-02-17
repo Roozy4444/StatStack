@@ -11,7 +11,7 @@ exports.up = async (knex) => {
     table.integer('win').notNullable()
     table.integer('loss').notNullable()
     table.integer('inningsPitched').notNullable()
-    table.integer('stikeouts').notNullable()
+    table.integer('strikeouts').notNullable()
     table.integer('earnedRuns').notNullable()
     table.integer('baseOnBalls').notNullable()
     table.integer('hits').notNullable()
