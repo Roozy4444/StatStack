@@ -18,7 +18,7 @@ class Pitching extends Model {
         baseOnBalls: { type: ['integer', 'string'] },
         hits: { type: ['integer', 'string'] },
         saves: { type: ['integer', 'string'] },
-        userId: { type: ['bigInteger', 'string'] },
+        userId: { type: ['integer', 'string'] },
       }
     }
   }
@@ -37,3 +37,5 @@ class Pitching extends Model {
     }
   }
 }
+
+module.exports = Pitching

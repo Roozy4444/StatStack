@@ -3,7 +3,7 @@ import { Redirect, Route } from "react-router";
 
 const AuthenticationCheck = ({ component: Component, user }) => {
   if (user !== null) {
-    return <Component />;
+    return <Component user={user}/>;
   }
   return <Redirect to="/user-sessions/new" />;
 };
@@ -20,3 +20,4 @@ const AuthenticatedRoute = ({ component, user, ...rest }) => {
 };
 
 export default AuthenticatedRoute;
+

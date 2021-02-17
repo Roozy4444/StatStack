@@ -18,7 +18,7 @@ class Batting extends Model {
         doubles: { type: ['integer', 'string'] },
         triples: { type: ['integer', 'string'] },
         stolenBases: { type: ['integer', 'string'] },
-        userId: { type: ['bigInteger', 'string'] }
+        userId: { type: ['integer', 'string'] }
       } 
     }
   }
@@ -39,3 +39,11 @@ class Batting extends Model {
 }
 
 module.exports = Batting
+
+// await models.User.query().insertAndFetch({ firstName:'William', lastName: 'Howell', email:'will@baseball.com', cryptedPassword:'test' })
+
+// await models.Batting.query().insertAndFetch({ atBats:5, hits:4, homeruns:1, rbis:6, strikeouts:0, doubles:1, triples:1, stolenBases:1, userId:1 })
+
+// await models.Fielding.query().insertAndFetch({ putOuts:15, assists: 2, errors:1, doublePlays: 1, userId: 1 })
+
+// await models.Pitching.query().insertAndFetch({ win: 0, loss:0, inningsPitched: 2, strikeouts: 5, earnedRuns:0, baseOnBalls: 0, hits:2, saves: 1, userId: 1 })
