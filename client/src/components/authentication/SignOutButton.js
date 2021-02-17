@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 
@@ -30,9 +31,9 @@ const SignOutButton = () => {
 
   return (
     <button 
-      id='button' 
+      id='btn-sign btn-sign-out' 
       type="button" 
-      className="button" 
+      className="sign-out-btn" 
       onClick={signOut}>
       Sign Out
     </button>
