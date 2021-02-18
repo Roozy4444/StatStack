@@ -25,8 +25,26 @@ const TopBar = ({ user }) => {
       <div className="top-bar-left">
         <ul className="menu">
           <li className="menu-text">StatStack</li>
+          {/* <li>
+            <Link to="/user">Home</Link>
+          </li> */}
           <li>
-            <Link to="/">Home</Link>
+            <Link to='/batting'>Batting</Link>
+          </li>
+          <li>
+            <Link to='/fielding'>Fielding</Link>
+          </li>
+          <li>
+            <Link to='/pitching'>Pitching</Link>
+          </li>
+          <li>
+            <Link to='/pastTen'>Past 10</Link>
+          </li>
+          <li>
+            <Link to='/compare'>Compare</Link>
+          </li>
+          <li>
+            <Link to='/postStats'>Add Game Stats</Link>
           </li>
         </ul>
       </div>
