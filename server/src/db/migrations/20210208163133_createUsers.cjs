@@ -8,8 +8,8 @@
 exports.up = async (knex) => {
     return knex.schema.createTable('users', (table) => {
       table.bigIncrements('id').primary()
-      table.string('firstName').notNullable
-      table.string('lastName').notNullable
+      table.string('firstName').notNullable()
+      table.string('lastName').notNullable()
       table.string('email').notNullable().unique();
       table.string('cryptedPassword').notNullable();
       table.timestamp('createdAt').notNullable().defaultTo(knex.fn.now());
