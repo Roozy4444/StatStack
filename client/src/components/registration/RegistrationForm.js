@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react'
 import FormError from '../layout/FormError'
 import config from '../../config'
@@ -103,7 +102,6 @@ const RegistrationForm = () => {
   }
 
   return (
-    
     <div className='grid-container background-runner' onSubmit={onSubmit}>
       <div className='container main-container form-container'>
         <h1>Register</h1>
@@ -118,7 +116,7 @@ const RegistrationForm = () => {
                 value={userPayload.firstName} 
                 onChange={onInputChange} 
               />
-              <FormError error={errors.name} />
+              <FormError error={errors.firstName} />
             </label>
           </div>
           <div>
@@ -131,7 +129,7 @@ const RegistrationForm = () => {
                 value={userPayload.lastName} 
                 onChange={onInputChange} 
               />
-              <FormError error={errors.name} />
+              <FormError error={errors.lastName} />
             </label>
           </div>
           <div>

@@ -1,5 +1,5 @@
 import express from "express"
-// import clientRouter from "./clientRouter.js"
+import clientRouter from './../../clientRouter.js'
 
 const battingRouter = new express.Router()
 
