@@ -98,16 +98,16 @@ const RegistrationForm = () => {
   }
 
   if (shouldRedirect) {
-    location.href = '/'
+    location.href = `api/v1/user/${id}`
   }
 
   return (
     <div className='grid-container background-runner' onSubmit={onSubmit}>
-      <div className='container main-container form-container'>
+      <div className='form-container'>
         <h1>Register</h1>
         <form>
           <div>
-            <label>
+            <label className='form-text'>
               First Name
               <input 
                 className='input' 
@@ -120,7 +120,7 @@ const RegistrationForm = () => {
             </label>
           </div>
           <div>
-            <label>
+            <label className='form-text'>
               Last Name
               <input 
                 className='input' 
@@ -133,7 +133,7 @@ const RegistrationForm = () => {
             </label>
           </div>
           <div>
-            <label>
+            <label className='form-text'>
               Email
               <input 
                 className='input' 
@@ -146,7 +146,7 @@ const RegistrationForm = () => {
             </label>
           </div>
           <div>
-            <label>
+            <label className='form-text'>
               Password
               <input
                 className='input'
@@ -159,7 +159,7 @@ const RegistrationForm = () => {
             </label>
           </div>
           <div>
-            <label>
+            <label className='form-text'>
               Password Confirmation
               <input
                 className='input'

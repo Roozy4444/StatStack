@@ -5,7 +5,7 @@ const PitchingShow = props => {
 
   // })
 
-  let img = 'https://www.fg-a.com/sports/2017-pitcher.gif'
+  let img = 'https://www.fg-a.com/sports/baseball-pitcher-1.jpg'
 
   return(
     <div>

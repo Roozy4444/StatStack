@@ -66,15 +66,15 @@ const SignInForm = () => {
   };
 
   if (shouldRedirect) {
-    location.href = "/";
+    location.href = `/user/:id`
   }
 
   return (
     <div className="grid-container background-runner" onSubmit={onSubmit}>
-      <form className='main-container form-container'>
+      <form className='form-container'>
         <h1>Sign In</h1>
         <div>
-          <label>
+          <label className='form-text'>
             Email
             <input 
               className='input' 
@@ -87,7 +87,7 @@ const SignInForm = () => {
           </label>
         </div>
         <div>
-          <label>
+          <label className='form-text'>
             Password
             <input
               className='input'

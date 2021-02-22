@@ -5,7 +5,7 @@ const FieldingShow = props => {
 
   // })
 
-  let img = 'https://www.fg-a.com/sports/amazing-catch-animation.gif'
+  let img = 'https://www.fg-a.com/sports/baseball-fielder-1.jpg'
 
   return(
     <div>

@@ -12,6 +12,7 @@ import BattingShow from './BattingShow'
 import FieldingShow from './FieldingShow'
 import PitchingShow from './PitchingShow'
 import PastTenShow from './PastTenShow'
+import UserShow from './UserShow'
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(undefined);
@@ -31,6 +32,7 @@ const App = (props) => {
         <Route exact path="/">
         {ReqSignIn}
         </Route>
+        
         <Route exact path="/batting">
         {BattingShow}
         </Route>
@@ -45,6 +47,9 @@ const App = (props) => {
         </Route>
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />
+        <Route exact path="/user/:id">
+        {UserShow}
+        </Route>
       </Switch>
     </Router>
   );
