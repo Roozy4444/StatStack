@@ -26,16 +26,13 @@ const TopBar = ({ user }) => {
         <ul className="menu">
           <li className="menu-text">StatStack</li>
           <li>
-            <Link to="/user/:id">Home</Link>
+            <Link classname='top-text' to="/user/:id">Home</Link>
           </li>
           <li>
-            <Link to='/pastTen'>Past 10</Link>
+            <Link classname='top-text' to='/compare'>Compare</Link>
           </li>
           <li>
-            <Link to='/compare'>Compare</Link>
-          </li>
-          <li>
-            <Link to='/postStats'>Add Game Stats</Link>
+            <Link classname='top-text' to='/postStats'>Add Game Stats</Link>
           </li>
         </ul>
       </div>

@@ -42,7 +42,7 @@ const App = (props) => {
         <Route exact path="/pitching">
         {PitchingShow}
         </Route>
-        <Route exact path="/pastTen">
+        <Route exact path="/compare">
         {PastTenShow}
         </Route>
         <Route exact path="/users/new" component={RegistrationForm} />
